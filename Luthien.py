@@ -1,34 +1,10 @@
 import random
-
+from encounter import *
+from enemy import *
+from item import *
 
 def d6():
     return random.randint(1, 6)
-
-
-class Weapon():
-    """The base weapon class"""
-
-    def ___ini___(self, name, description, skillbonus, damage):
-        self.name = name
-        self.description = description
-        self.skillbonus = skillbonus
-        self.damage = damage
-
-    def ___str___(self):
-        return "{} {} {} {}".format(self.name, self.description, self.skillbonus, self.damage)
-
-
-class Enemy:
-    def ___init___(self, name, health, skill):
-        self.name = name
-        self.health = health
-        self.skill = skill
-
-    def is_alive(self):
-        return self.health > 0
-
-    def ___str___(self):
-        return "{} {} {}".format(self.name, self.health, self.skill)
 
 
 def main():
