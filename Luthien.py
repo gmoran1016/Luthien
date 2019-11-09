@@ -1,6 +1,6 @@
 import random
-from encounter import *
-from enemy import *
+
+import encounter
 from item import *
 
 
@@ -60,7 +60,7 @@ def main():
                   "You are in system {} area {}, You have {} Skill {} Health {} Luck {} Fuel and {} money".format
                   (system, area, skill, health, luck, fuel, money))
             store = encounter.Store()
-            store.runloop()
+            store.runLoop()
             area+=1
         system += 1
 
