@@ -7,4 +7,4 @@ class encounter:
 
 
     def ___str___(self):
-        return "{} {} {} {}".format(self.name, self.description)
+        return "{} {}".format(self.name, self.description)
