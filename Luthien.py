@@ -52,7 +52,7 @@ def main():
 
             elif rand < 80:
                 print("Station")
-                # areaencounter = encounter.Station()
+                money, fuel, health = encounter.station(money, fuel, health)
             else:
                 print("NOTHING")
             #areaencounter.runLoop()
