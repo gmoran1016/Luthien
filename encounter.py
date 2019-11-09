@@ -61,7 +61,7 @@ def station(money, fuel, health):
                 return money, fuel, health
             elif choice == 4:
                 # Mines/damage##
-                healthlost = random.random(1, 5)
+                healthlost = random.randint(1, 5)
                 health -= healthlost
                 return money, fuel, health
             else:
