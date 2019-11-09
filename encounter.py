@@ -75,7 +75,7 @@ class Station(Encounter):
                 elif choice == 3:
                     ##Fuel##
                 elif choice == 4:
-                    #Mines##
+                    #Mines/damage##
 
             else:
                 break
