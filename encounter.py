@@ -47,26 +47,26 @@ def station(money, fuel, health):
             if choice == 1:
                 ##enemy##
                 print('needs to be implemented')
-                break
+                return money, fuel, health
             elif choice == 2:
                 ##Salvage##
                 salvageamount = random.randint(10, 20)
                 money += salvageamount
-                break
+                return money, fuel, health
 
             elif choice == 3:
                 ##Fuel##
                 fuelamount = random.randint(0, 10)
                 fuel += fuelamount
-                break
+                return money, fuel, health
             elif choice == 4:
                 # Mines/damage##
                 healthlost = random.random(1, 5)
                 health -= healthlost
-                break
+                return money, fuel, health
             else:
                 print('something has gone wrong you should see this!')
-                break
+                return money, fuel, health
 
         else:
             break
