@@ -1,3 +1,6 @@
+from pip._vendor.distlib.compat import raw_input
+import random
+
 import Luthien
 
 
@@ -50,4 +53,29 @@ class Store(Encounter):
             elif selection == '4':
                 print("Hope to see you again soon!")
                 print(Luthien.money)
+                break
+
+
+class Station(Encounter):
+    def ___init___(self, name, description):
+        super().__init__(name, description)
+
+    def runLoop(self):
+        while True:
+            investigate = raw_input("As you enter this area your radio buzzes to life. 'Please help me Obi Won Kenobi, "
+                                    "You're my only hope' "
+                                    "Do you investigate? (y or n)  ")
+
+            if investigate == 'y':
+                choice = random.randint(1, 4)
+                if choice == 1:
+                    ##enemy##
+                elif choice == 2:
+                    ##Salvage##
+                elif choice == 3:
+                    ##Fuel##
+                elif choice == 4:
+                    #Mines##
+
+            else:
                 break

@@ -36,6 +36,7 @@ money = 50
 system = 1
 area = 1
 
+
 def main():
     print("Welcome to Luthien a text based space adventure game!")
     print("First we will create your character and ship")
@@ -61,9 +62,8 @@ def main():
                   (system, area, skill, health, luck, fuel, money))
             store = encounter.Store()
             store.runLoop()
-            area+=1
+            area += 1
         system += 1
-
 
 
 if __name__ == "__main__":
