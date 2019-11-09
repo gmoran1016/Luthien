@@ -8,11 +8,16 @@ def d6():
 def main():
     print("Welcome to Luthien a text based space adventure game!")
     print("First we will create your character and ship")
-    skill = 6 + d6()
-    stamina = 12 + d6() + d6()
-    luck = 6 + d6()
-    fuel = 6 + d6()
-    print("Skill: {skill} Stamina: {stamina} Luck: {luck} Fuel: {fuel}".format(skill=skill, stamina=stamina, luck=luck, fuel=fuel))
+    max_skill = 6 + d6()
+    skill = max_skill
+    max_health = 12 + d6() + d6()
+    health = max_health
+    max_luck = 6 + d6()
+    luck = max_luck
+    max_fuel = 6 + d6()
+    fuel = max_fuel
+    money = 50
+    print("Skill: {skill} Health: {health} Luck: {luck} Fuel: {fuel}".format(skill=skill, health=health, luck=luck, fuel=fuel))
 
 
 if __name__ == "__main__":
