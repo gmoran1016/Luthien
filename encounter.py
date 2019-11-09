@@ -1,6 +1,7 @@
 from pip._vendor.distlib.compat import raw_input
 import random
 
+
 def store(money, fuel, max_fuel, repairToolAmount):
     print('Welcome to the store: what can we get for you?')
 
@@ -18,7 +19,7 @@ def store(money, fuel, max_fuel, repairToolAmount):
             else:
                 print('your fuel has been increased by one')
                 fuel = ++1
-                money = money- 10
+                money = money - 10
                 print('your current fuel is: ' + fuel)
 
         elif selection == '2':
@@ -34,26 +35,38 @@ def store(money, fuel, max_fuel, repairToolAmount):
             print(money)
             return money, fuel, repairToolAmount
 
- class Station(Encounter):
-    def ___init___(self, name, description):
-        super().__init__(name, description)
 
-    def runLoop(self):
-        while True:
-            investigate = raw_input("As you enter this area your radio buzzes to life. 'Please help me Obi Won Kenobi, "
-                                    "You're my only hope' "
-                                    "Do you investigate? (y or n)  ")
+def station(money, fuel, health):
+    while True:
+        investigate = raw_input("As you enter this area your radio buzzes to life. 'Please help me Obi Won Kenobi, "
+                                "You're my only hope' "
+                                "Do you investigate? (y or n)  ")
 
-            if investigate == 'y':
-                choice = random.randint(1, 4)
-                if choice == 1:
-                    ##enemy##
-                elif choice == 2:
-                    ##Salvage##
-                elif choice == 3:
-                    ##Fuel##
-                elif choice == 4:
-                    #Mines/damage##
-
-            else:
+        if investigate == 'y':
+            choice = random.randint(1, 4)
+            if choice == 1:
+                ##enemy##
+                print('needs to be implemented')
                 break
+            elif choice == 2:
+                ##Salvage##
+                salvageamount = random.randint(10, 20)
+                money += salvageamount
+                break
+
+            elif choice == 3:
+                ##Fuel##
+                fuelamount = random.randint(0, 10)
+                fuel += fuelamount
+                break
+            elif choice == 4:
+                # Mines/damage##
+                healthlost = random.random(1, 5)
+                health -= healthlost
+                break
+            else:
+                print('something has gone wrong you should see this!')
+                break
+
+        else:
+            break
