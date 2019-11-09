@@ -20,3 +20,8 @@ class Weapon:
 
     def ___str___(self):
         return "{} {} {} {}".format(self.name, self.description, self.skillbonus, self.damage)
+
+
+class LaserMk1(Weapon):
+    def __init__(self):
+        super().__init__(name="LaserMk1", description="A Basic Laser", skillbonus=0, damage=1)
