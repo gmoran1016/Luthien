@@ -17,20 +17,30 @@ def main():
     money = 50
     system = 1
     repairToolAmount = 1
+    print("""\
 
+ __       __    __  .___________. __    __   _______  __  .__   __.
+|  |     |  |  |  | |           ||  |  |  | |   ____||  | |  \ |  |
+|  |     |  |  |  | `---|  |----`|  |__|  | |  |__   |  | |   \|  |
+|  |     |  |  |  |     |  |     |   __   | |   __|  |  | |  . `  |
+|  `----.|  `--'  |     |  |     |  |  |  | |  |____ |  | |  |\   |
+|_______| \______/      |__|     |__|  |__| |_______||__| |__| \__|
+
+
+""")
     print("Welcome to Luthien a text based space adventure game!")
-    print("First we will create your character and ship")
-
+    print("By Brain Zschau & Griffin Moran")
+    print("\nFirst we will create your character and ship:")
     print("Skill: {} Health: {} Fuel: {}".format(skill, health, fuel))
 
     print(
         "\nYou find yourself the captain of the Starship Luthien. Congratulations on your promotion!\nAs i'm sure you "
-        "are aware you are on the run from the Eridu Empire, The most evil empire in the galaxy")
+        "are aware you are on the run from the Eridu Empire, The most evil empire in the galaxy!")
     print(
-        "your goal is simple, navigate the various star systems of the universe and find and destroy the Eridu "
+        "\nYour goal is simple, navigate the various star systems of the universe and find and destroy the Eridu "
         "Capital ship, simple stuff for a captain such as yourself.\nDuring your journey you will encounter many "
         "things so don't be afraid to fail. Though i'm sure somebody with your skills will be fine. Good luck!")
-    input("Press enter to continue")
+    input("\nPress enter to continue")
 
     while system < 5:
         area = 1

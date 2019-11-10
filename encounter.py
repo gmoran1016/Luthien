@@ -75,7 +75,14 @@ def station(money, fuel, health, skill):
             if choice == 1:
                 ##enemy##
                 print("Enemy")
-                health = combat.enemy(3, skill, health)
+                health = combat.enemy(5, skill, health)
+                rewardMoney = random.randint(1, 10)
+                rewardFuel = random.randint(2, 8)
+                print("**********************\nYou have gained {} Salvage and {} Fuel".format(rewardMoney, rewardFuel))
+                money += rewardMoney
+                fuel += rewardFuel
+                if fuel > max_fuel:
+                    fuel = max_fuel
                 return money, fuel, health, skill
 
             elif choice == 2:
