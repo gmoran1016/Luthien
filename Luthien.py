@@ -44,6 +44,14 @@ def main():
             if rand < 65:
                 print("Enemy")
                 health = combat.enemy(system, skill, health)
+                rewardMoney = random.randint(1,5)
+                rewardFuel = random.randint(1,5)
+                print("You have gained {} Salvage and {} Fuel".format(rewardMoney, rewardFuel))
+                money += rewardMoney
+                fuel += rewardFuel
+                if fuel > max_fuel:
+                    fuel = max_fuel
+
             elif rand < 75:
                 print(money)
                 print("Store")
@@ -51,7 +59,7 @@ def main():
 
             elif rand < 80:
                 print("Station")
-                money, fuel, health = encounter.station(money, fuel, health)
+                money, fuel, health = encounter.station(money, fuel, health, skill)
             else:
                 print("NOTHING")
             # areaencounter.runLoop()
