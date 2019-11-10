@@ -54,7 +54,7 @@ def main():
                 money, fuel, max_fuel, repairToolAmount, max_health, skill = encounter.store(money, fuel, max_fuel, repairToolAmount, max_health, skill)
 
             elif rand < 80:
-                money, fuel, health = encounter.station(money, fuel, health, skill)
+                money, fuel, health, skill = encounter.station(money, fuel, health, skill)
             else:
                 print("NOTHING")
             # areaencounter.runLoop()
