@@ -1,6 +1,8 @@
 from pip._vendor.distlib.compat import raw_input
 import random
 
+import combat
+
 
 def store(money, fuel, max_fuel, repairToolAmount):
     print('Welcome to the store: what can we get for you?')
@@ -16,10 +18,10 @@ def store(money, fuel, max_fuel, repairToolAmount):
                     print('You already have the max amount of fuel.')
 
                 else:
-                    print('your fuel has been increased by one')
+                    print('Your fuel has been increased by one')
                     fuel += 1
                     money = money - 10
-                    print('your current fuel is: {}'.format(fuel))
+                    print('Your current fuel is: {}'.format(fuel))
 
             elif selection == '2':
                 repairToolAmount += 1
@@ -31,11 +33,11 @@ def store(money, fuel, max_fuel, repairToolAmount):
                 print(money)
                 return money, fuel, repairToolAmount
         else:
-            print("unfortunately you are broke so we can't sell you anything")
+            print("Unfortunately you are broke so we can't sell you anything")
             return money,fuel,repairToolAmount
 
 
-def station(money, fuel, health):
+def station(money, fuel, health,skill):
     while True:
         investigate = input("As you enter this area your radio buzzes to life. 'Please help me Obi Won Kenobi, "
                             "You're my only hope' "
@@ -45,8 +47,9 @@ def station(money, fuel, health):
             choice = random.randint(1, 4)
             if choice == 1:
                 ##enemy##
-                print('needs to be implemented')
-                return money, fuel, health
+                print("Enemy")
+                health = combat.enemy(3, skill, health)
+                return money, fuel, health,skill
 
             elif choice == 2:
                 ##Salvage##
@@ -54,7 +57,7 @@ def station(money, fuel, health):
                 salvageamount = random.randint(10, 20)
                 money += salvageamount
                 print('your current amount of salvage is now: {}'.format(money))
-                return money, fuel, health
+                return money, fuel, health,skill
 
             elif choice == 3:
                 ##Fuel##
@@ -62,7 +65,7 @@ def station(money, fuel, health):
                 fuelamount = random.randint(0, 10)
                 fuel += fuelamount
                 print('your current fuel is now: {}'.format(fuel))
-                return money, fuel, health
+                return money, fuel, health,skill
 
             elif choice == 4:
                 # Mines/damage##
@@ -70,10 +73,10 @@ def station(money, fuel, health):
                 healthlost = random.randint(1, 5)
                 health -= healthlost
                 print('Your current health is now: {}'.format(health))
-                return money, fuel, health
+                return money, fuel, health,skill
             else:
                 print('something has gone wrong you should see this!')
-                return money, fuel, health
+                return money, fuel, health,skill
 
         else:
             break

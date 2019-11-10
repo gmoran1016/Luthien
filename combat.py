@@ -4,7 +4,7 @@ def combat(skill, health, enemyskill, enemyhealth, name):
     damage = 2
     while enemyhealth > 0:
         print("**********************")
-        print("Your Ship Skill:{} Health:{} | {} Ship Skill:{} Health:{}".format(skill, health, name, enemyskill,
+        print("Your Ship Skill: {} Health: {} | {} Ship Skill: {} Health: {}".format(skill, health, name, enemyskill,
                                                                                 enemyhealth))
         yourroll = Luthien.d6() + Luthien.d6() + skill
         enemyroll = Luthien.d6() + Luthien.d6() + enemyskill

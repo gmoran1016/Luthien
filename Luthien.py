@@ -38,7 +38,7 @@ def main():
         area = 1
         while area < 11:
             print("-------------------------------------------\n"
-                  "You are in system {} area {}, You have {} Skill {} Health {} Fuel and {} money".format
+                  "You are in system {} area {}, You have Skill: {}, Health: {}, Fuel: {}, and Salvage: {}".format
                   (system, area, skill, health, fuel, money))
             rand = random.randint(1, 100)
             if rand < 65:
