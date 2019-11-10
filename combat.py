@@ -21,6 +21,7 @@ def combat(skill, health, enemyskill, enemyhealth, name):
                 exit(0)
         else:
             print("You both are unable to damage each other")
+    print("{} has been destroyed!!!!!!!!!!!!!".format(name))
     return health
 
 def enemy(system, skill, health):

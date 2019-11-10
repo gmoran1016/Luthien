@@ -33,7 +33,7 @@ def main():
         "your goal is simple, navigate the various star systems of the universe and find and destroy the Eridu "
         "Capital ship, simple stuff for a captain such as yourself.\nDuring your journey you will encounter many "
         "things so don't be afraid to fail. Though i'm sure somebody with your skills will be fine. Good luck!")
-
+    input("Press enter to continue")
     while system < 5:
         area = 1
         while area < 11:
@@ -55,6 +55,14 @@ def main():
             else:
                 print("NOTHING")
             # areaencounter.runLoop()
+            if repairToolAmount > 0:
+                selection = input("Would you like to use one of your repair tools (you have {}), y or n?".format(repairToolAmount))
+                if selection == 'y':
+                    health += d6() + d6()
+                    if health > max_health:
+                        health = max_health
+            else:
+                input("Press enter to continue")
             if fuel == 0:
                 print("Sadly you have run out of and are stranded, you ended the game in system {} area {}".
                       format(system, area))
