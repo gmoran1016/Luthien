@@ -1,11 +1,12 @@
 import Luthien
 
+
 def combat(skill, health, enemyskill, enemyhealth, name):
     damage = 2
     while enemyhealth > 0:
         print("**********************")
         print("Your Ship Skill: {} Health: {} | {} Ship Skill: {} Health: {}".format(skill, health, name, enemyskill,
-                                                                                enemyhealth))
+                                                                                     enemyhealth))
         yourroll = Luthien.d6() + Luthien.d6() + skill
         enemyroll = Luthien.d6() + Luthien.d6() + enemyskill
 
@@ -17,12 +18,16 @@ def combat(skill, health, enemyskill, enemyhealth, name):
             print("You have taken {} damage".format(damage))
             health -= damage
             if health < 1:
-                input("Your ship has taken critical damage and was destroyed")
+                selection = input("Your ship has taken critical damage and was destroyed\n would you like to play "
+                                  "again?(y/n)")
+                if selection == 'y':
+                    Luthien.main()
                 exit(0)
         else:
             print("You both are unable to damage each other")
     print("{} has been destroyed!!!!!!!!!!!!!".format(name))
     return health
+
 
 def enemy(system, skill, health):
     enemyskill = 5 + system
@@ -31,11 +36,13 @@ def enemy(system, skill, health):
     input("Press Enter to continue")
     return combat(skill, health, enemyskill, enemyhealth, "Pirate")
 
+
 def finalboss(skill, health, max_health, repairToolAmount):
     enemyskill = 12
     enemyhealth = 24
     print("Ah it is Eridu AAAAAAAAAHHHHHHHHHHHHHHH")
-    print("Eridu's ship is strong and will not go down easy, he has a skill of {} and health of {}".format(enemyskill, enemyhealth))
+    print("Eridu's ship is strong and will not go down easy, he has a skill of {} and health of {}".format(enemyskill,
+                                                                                                           enemyhealth))
 
     damage = 2
     while enemyhealth > 0:
@@ -62,7 +69,10 @@ def finalboss(skill, health, max_health, repairToolAmount):
             print("You have taken {} damage".format(damage))
             health -= damage
             if health < 1:
-                input("Your ship has taken critical damage and was destroyed")
+                selection = input("Your ship has taken critical damage and was destroyed\n would you like to play "
+                                  "again?(y/n)")
+                if selection == 'y':
+                    Luthien.main()
                 exit(0)
         else:
             print("You both are unable to damage each other")

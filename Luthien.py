@@ -71,9 +71,10 @@ def main():
                         health = max_health
             input("Press enter to continue")
             if fuel == 0:
-                input(
-                    "Sadly you have run out of and are stranded, you ended the game in system {} area {}".format(system,
-                                                                                                                 area))
+                selection = input("Sadly you have run out of and are stranded, you ended the game in system {} area {}"
+                                  "\n would you like to play again?(y/n)".format(system, area))
+                if selection == 'y':
+                    main()
                 exit(0)
             fuel -= 1
             area += 1
@@ -85,6 +86,7 @@ def main():
             "Eridu"))
     if selection == 'y':
         main()
+    exit(0)
 
 
 if __name__ == "__main__":
