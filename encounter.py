@@ -15,20 +15,20 @@ nothing = ['You have a rare moment of solace in this hectic world.', 'The scanne
 def store(money, fuel, max_fuel, repairToolAmount, max_health, skill):
     print('Welcome to the store: what can we get for you?')
 
-    print('\n1.) buy more fuel - Cost 10 Salvage')
+    print('\n1.) Buy more fuel - Cost 10 Salvage')
     print('\n2.) Buy a repair tool - Cost 10 Salvage')
     print('\n3.) Modify your ship - Cost 50 Salvage')
     print('\n4.) Leave the store')
 
     while True:
-        selection = input('make a selection (1, 2, 3 or 4): ')
+        selection = input('Make a selection (1, 2, 3 or 4): ')
         if money > 9:
             if selection == '1':
                 if fuel == max_fuel:
                     print('You already have the max amount of fuel.')
 
                 else:
-                    print('Your fuel has been increased by one')
+                    print('Your fuel has been increased by one.')
                     fuel += 1
                     money = money - 10
                     print('Your current fuel is: {}'.format(fuel))
@@ -36,12 +36,11 @@ def store(money, fuel, max_fuel, repairToolAmount, max_health, skill):
             elif selection == '2':
                 repairToolAmount += 1
                 money = money - 10
-                print("Thank you for your purchase!")
-
+                print("Thank you for your purchase! ")
 
             elif selection == '3':
                 if money >= 50:
-                    x = input('Would you like to 1.) Increase Max Health by 1 or 2.) increase you skill by 1')
+                    x = input('Would you like to \n1.) Increase Max Health by 1 \nor \n2.) increase you skill by 1: ')
                     if x == '1':
                         max_health += 1
                         print('your max health is now {}'.format(max_health))
@@ -57,11 +56,8 @@ def store(money, fuel, max_fuel, repairToolAmount, max_health, skill):
                 else:
                     print("You don't have enough money")
 
-
-
             elif selection == '4':
                 print("Hope to see you again soon!")
-                print(money)
                 return money, fuel, max_fuel, repairToolAmount, max_health, skill
         else:
             print("Unfortunately you are broke so we can't sell you anything")
