@@ -17,7 +17,7 @@ def combat(skill, health, enemyskill, enemyhealth, name):
             print("You have taken {} damage".format(damage))
             health -= damage
             if health < 1:
-                print("Your ship has taken critical damage and was destroyed")
+                input("Your ship has taken critical damage and was destroyed")
                 exit(0)
         else:
             print("You both are unable to damage each other")
@@ -62,8 +62,7 @@ def finalboss(skill, health, max_health, repairToolAmount):
             print("You have taken {} damage".format(damage))
             health -= damage
             if health < 1:
-                print("Your ship has taken critical damage and was destroyed")
+                input("Your ship has taken critical damage and was destroyed")
                 exit(0)
         else:
             print("You both are unable to damage each other")
-    print("{} has been destroyed!!!!!!!!!!!!!\n CONGRADULATION ON WINNING PLEASE PLAY AGAIN(or don't I don't care)".format("Eridu"))

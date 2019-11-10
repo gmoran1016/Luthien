@@ -2,7 +2,6 @@ import random
 
 import encounter
 import combat
-from item import *
 
 
 def d6():
@@ -22,8 +21,7 @@ def main():
     print("Welcome to Luthien a text based space adventure game!")
     print("First we will create your character and ship")
 
-    print(
-        "Skill: {} Health: {} Fuel: {}".format(skill, health, fuel))
+    print("Skill: {} Health: {} Fuel: {}".format(skill, health, fuel))
 
     print(
         "\nYou find yourself the captain of the Starship Luthien. Congratulations on your promotion!\nAs i'm sure you "
@@ -38,8 +36,8 @@ def main():
         area = 1
         while area < 11:
             print("-------------------------------------------\n"
-                  "You are in system {} area {}, You have Skill: {}, Health: {}, Fuel: {}, and Salvage: {}".format
-                  (system, area, skill, health, fuel, money))
+                  "You are in system {} area {}, You have Skill: {}, Health: {}, Fuel: {}, and Salvage: {}".format(
+                    system, area, skill, health, fuel, money))
             rand = random.randint(1, 100)
             # Enemy
             if rand < 55:
@@ -61,10 +59,11 @@ def main():
                 money, fuel, health, skill = encounter.station(money, fuel, health, skill)
             # Nothing
             else:
-                print(encounter.nothing[random.randint(0, len(encounter.nothing)-1)])
+                print(encounter.nothing[random.randint(0, len(encounter.nothing) - 1)])
             if repairToolAmount > 0 and health < max_health:
-                selection = input("Would you like to use one of your repair tools (you have {} with a health of {} "
-                                  "out of {}), y or n?".format(repairToolAmount, health, max_health))
+                selection = input(
+                    "Would you like to use one of your repair tools (you have {} with a health of {} out of {}), "
+                    "y or n?".format(repairToolAmount, health, max_health))
                 if selection == 'y':
                     health += d6() + d6()
                     repairToolAmount -= 1
@@ -72,14 +71,20 @@ def main():
                         health = max_health
             input("Press enter to continue")
             if fuel == 0:
-                print("Sadly you have run out of and are stranded, you ended the game in system {} area {}".
-                      format(system, area))
+                input(
+                    "Sadly you have run out of and are stranded, you ended the game in system {} area {}".format(system,
+                                                                                                                 area))
                 exit(0)
             fuel -= 1
             area += 1
         system += 1
 
     combat.finalboss(skill, health, max_health, repairToolAmount)
+    selection = input(
+        "{} has been destroyed!!!!!!!!!!!!!\n CONGRADULATION ON WINNING\nWould you like to play again?(y/n)".format(
+            "Eridu"))
+    if selection == 'y':
+        main()
 
 
 if __name__ == "__main__":
