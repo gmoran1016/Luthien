@@ -81,8 +81,6 @@ def station(money, fuel, health, skill):
                 print("**********************\nYou have gained {} Salvage and {} Fuel".format(rewardMoney, rewardFuel))
                 money += rewardMoney
                 fuel += rewardFuel
-                if fuel > max_fuel:
-                    fuel = max_fuel
                 return money, fuel, health, skill
 
             elif choice == 2:

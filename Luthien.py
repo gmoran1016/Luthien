@@ -67,6 +67,8 @@ def main():
             # Station
             elif rand < 75:
                 money, fuel, health, skill = encounter.station(money, fuel, health, skill)
+                if fuel > max_fuel:
+                    fuel = max_fuel
             # Nothing
             else:
                 print(encounter.nothing[random.randint(0, len(encounter.nothing) - 1)])
