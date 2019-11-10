@@ -102,4 +102,4 @@ def station(money, fuel, health, skill):
                 return money, fuel, health, skill
 
         else:
-            break
+            return money, fuel, health, skill
