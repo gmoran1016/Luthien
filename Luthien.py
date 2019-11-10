@@ -33,6 +33,7 @@ def main():
         "Capital ship, simple stuff for a captain such as yourself.\nDuring your journey you will encounter many "
         "things so don't be afraid to fail. Though i'm sure somebody with your skills will be fine. Good luck!")
     input("Press enter to continue")
+
     while system < 5:
         area = 1
         while area < 11:
@@ -77,6 +78,7 @@ def main():
             area += 1
         system += 1
 
+    combat.finalboss(skill, health, max_health, repairToolAmount)
 
 if __name__ == "__main__":
     main()
