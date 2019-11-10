@@ -61,7 +61,7 @@ def main():
                 money, fuel, health, skill = encounter.station(money, fuel, health, skill)
             # Nothing
             else:
-                print(encounter.nothing[random.randint(1, len(encounter.nothing))])
+                print(encounter.nothing[random.randint(0, len(encounter.nothing)-1)])
             if repairToolAmount > 0 and health < max_health:
                 selection = input("Would you like to use one of your repair tools (you have {} with a health of {} "
                                   "out of {}), y or n?".format(repairToolAmount, health, max_health))
