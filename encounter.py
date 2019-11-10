@@ -32,7 +32,7 @@ def store(money, fuel, max_fuel, repairToolAmount):
                 return money, fuel, repairToolAmount
         else:
             print("unfortunately you are broke so we can't sell you anything")
-            break
+            return money,fuel,repairToolAmount
 
 
 def station(money, fuel, health):
