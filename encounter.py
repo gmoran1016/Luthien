@@ -13,8 +13,8 @@ def store(money, fuel, max_fuel, repairToolAmount, max_health, skill):
     print('\n4.) Leave the store')
 
     while True:
-        selection = input('make a selection (1, 2 or 3): ')
-        if money > 0:
+        selection = input('make a selection (1, 2, 3 or 4): ')
+        if money > 9:
             if selection == '1':
                 if fuel == max_fuel:
                     print('You already have the max amount of fuel.')
@@ -32,17 +32,23 @@ def store(money, fuel, max_fuel, repairToolAmount, max_health, skill):
 
 
             elif selection == '3':
-                x = input('Would you like to 1.) Increase Max Health by 1 or 2.) increase you skill by 1')
-                if x == '1':
-                    max_health += 1
-                    print('your max health is now {}'.format(max_health))
+                if money >= 50:
+                    x = input('Would you like to 1.) Increase Max Health by 1 or 2.) increase you skill by 1')
+                    if x == '1':
+                        max_health += 1
+                        print('your max health is now {}'.format(max_health))
+                        money -= 50
 
-                elif x == '2':
-                    skill += 1
-                    print('Your skill is now {}'.format(skill))
+                    elif x == '2':
+                        skill += 1
+                        print('Your skill is now {}'.format(skill))
+                        money -= 50
 
+                    else:
+                        return money, fuel, max_fuel, repairToolAmount, max_health, skill
                 else:
-                    return money, fuel, max_fuel, repairToolAmount,max_health,skill
+                    print("You don't have enough money")
+
 
 
             elif selection == '4':
