@@ -1,6 +1,7 @@
 import random
 
 import encounter
+import combat
 from item import *
 
 
@@ -15,10 +16,8 @@ def main():
     health = max_health
     max_fuel = 6 + d6()
     fuel = max_fuel
-    weapon = LaserMk1
     money = 50
     system = 1
-    area = 1
     repairToolAmount = 1
 
     print("Welcome to Luthien a text based space adventure game!")
@@ -44,7 +43,7 @@ def main():
             rand = random.randint(1, 100)
             if rand < 65:
                 print("Enemy")
-                # areaencounter = encounter.Enemy()
+                health = combat.enemy(system, skill, health)
             elif rand < 75:
                 print(money)
                 print("Store")
@@ -55,7 +54,7 @@ def main():
                 money, fuel, health = encounter.station(money, fuel, health)
             else:
                 print("NOTHING")
-            #areaencounter.runLoop()
+            # areaencounter.runLoop()
             if fuel == 0:
                 print("Sadly you have run out of and are stranded, you ended the game in system {} area {}".
                       format(system, area))
