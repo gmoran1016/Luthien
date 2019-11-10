@@ -28,4 +28,5 @@ def enemy(system, skill, health):
     enemyskill = 5 + system
     enemyhealth = 5 + system
     print("You have encountered an enemy pirate ship with skill {} and health {}".format(enemyskill, enemyhealth))
+    input("Press Enter to continue")
     return combat(skill, health, enemyskill, enemyhealth, "Pirate")
