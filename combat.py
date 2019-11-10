@@ -32,7 +32,7 @@ def enemy(system, skill, health):
     return combat(skill, health, enemyskill, enemyhealth, "Pirate")
 
 def finalboss(skill, health, max_health, repairToolAmount):
-    enemyskill = 18
+    enemyskill = 12
     enemyhealth = 24
     print("Ah it is Eridu AAAAAAAAAHHHHHHHHHHHHHHH")
     print("Eridu's ship is strong and will not go down easy, he has a skill of {} and health of {}".format(enemyskill, enemyhealth))
