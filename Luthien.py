@@ -12,8 +12,8 @@ def main():
     skill = 6 + d6()
     max_health = 12 + d6() + d6()
     health = max_health
-    max_fuel = 6 + d6()
-    fuel = max_fuel
+    fuel = 6 + d6()
+    max_fuel = 20
     money = 50
     system = 1
     repairToolAmount = 1
@@ -66,7 +66,7 @@ def main():
                                                                                              max_health, skill)
             # Station
             elif rand < 75:
-                money, fuel, health, skill = encounter.station(money, fuel, health, skill)
+                money, fuel, health, skill = encounter.station(money, fuel, max_fuel, health, skill)
                 if fuel > max_fuel:
                     fuel = max_fuel
             # Nothing

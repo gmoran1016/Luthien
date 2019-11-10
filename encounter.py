@@ -1,6 +1,5 @@
 from pip._vendor.distlib.compat import raw_input
 import random
-
 import combat
 
 nothing = ['You have a rare moment of solace in this hectic world.', 'The scanners have come up negative, you have a '
@@ -64,7 +63,7 @@ def store(money, fuel, max_fuel, repairToolAmount, max_health, skill):
             return money, fuel, max_fuel, repairToolAmount, max_health, skill
 
 
-def station(money, fuel, health, skill):
+def station(money, fuel, max_fuel, health, skill):
     while True:
         investigate = input("As you enter this area your radio buzzes to life. 'Please help me Obi Won Kenobi, "
                             "You're my only hope' "
@@ -81,6 +80,8 @@ def station(money, fuel, health, skill):
                 print("**********************\nYou have gained {} Salvage and {} Fuel".format(rewardMoney, rewardFuel))
                 money += rewardMoney
                 fuel += rewardFuel
+                if fuel > max_fuel:
+                    fuel = max_fuel
                 return money, fuel, health, skill
 
             elif choice == 2:
@@ -96,6 +97,8 @@ def station(money, fuel, health, skill):
                 print("You find some fuel canisters lying around so you take them")
                 fuelamount = random.randint(0, 10)
                 fuel += fuelamount
+                if fuel > max_fuel:
+                    fuel = max_fuel
                 print('your current fuel is now: {}'.format(fuel))
                 return money, fuel, health, skill
 
