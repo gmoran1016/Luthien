@@ -42,8 +42,8 @@ def main():
             rand = random.randint(1, 100)
             if rand < 65:
                 health = combat.enemy(system, skill, health)
-                rewardMoney = random.randint(1,5)
-                rewardFuel = random.randint(0,2)
+                rewardMoney = random.randint(1, 5)
+                rewardFuel = random.randint(0, 2)
                 print("**********************\nYou have gained {} Salvage and {} Fuel".format(rewardMoney, rewardFuel))
                 money += rewardMoney
                 fuel += rewardFuel
@@ -51,12 +51,14 @@ def main():
                     fuel = max_fuel
 
             elif rand < 75:
-                money, fuel, max_fuel, repairToolAmount, max_health, skill = encounter.store(money, fuel, max_fuel, repairToolAmount, max_health, skill)
+                money, fuel, max_fuel, repairToolAmount, max_health, skill = encounter.store(money, fuel, max_fuel,
+                                                                                             repairToolAmount,
+                                                                                             max_health, skill)
 
             elif rand < 80:
                 money, fuel, health, skill = encounter.station(money, fuel, health, skill)
             else:
-                print("NOTHING")
+                print(encounter.nothing[random.randint(1, len(encounter.nothing))])
             # areaencounter.runLoop()
             if repairToolAmount > 0 and health < max_health:
                 selection = input("Would you like to use one of your repair tools (you have {} with a health of {} "

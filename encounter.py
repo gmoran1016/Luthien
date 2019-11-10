@@ -3,6 +3,14 @@ import random
 
 import combat
 
+nothing = ['You have a rare moment of solace in this hectic world.', 'The scanners have come up negative, you have a '
+                                                                     'moment of peace.', 'Wow there is nothing here, '
+                                                                                         'Incredible!',
+           'The radar shows '
+           'no enemy\'s in '
+           'this area.',
+           "There are no enemy's here to fight.", "I'm sorry, the enemy you are looking for is in a different castle"]
+
 
 def store(money, fuel, max_fuel, repairToolAmount, max_health, skill):
     print('Welcome to the store: what can we get for you?')
