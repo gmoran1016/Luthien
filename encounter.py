@@ -58,6 +58,9 @@ def store(money, fuel, max_fuel, repairToolAmount, max_health, skill):
             elif selection == '4':
                 print("Hope to see you again soon!")
                 return money, fuel, max_fuel, repairToolAmount, max_health, skill
+        elif selection == '4':
+            print("Hope to see you again soon!")
+            return money, fuel, max_fuel, repairToolAmount, max_health, skill
         else:
             print("Unfortunately you are broke so we can't sell you anything")
             return money, fuel, max_fuel, repairToolAmount, max_health, skill
