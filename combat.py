@@ -1,3 +1,5 @@
+import time
+
 import Luthien
 
 
@@ -14,9 +16,11 @@ def combat(skill, health, enemyskill, enemyhealth, name):
         if yourroll > enemyroll:
             print("The enemy has taken {} damage".format(damage))
             enemyhealth -= damage
+            time.sleep(2.3)
         elif enemyroll > yourroll:
             print("You have taken {} damage".format(damage))
             health -= damage
+            time.sleep(2.3)
             if health < 1:
                 selection = input("Your ship has taken critical damage and was destroyed\n would you like to play "
                                   "again?(y/n)")
